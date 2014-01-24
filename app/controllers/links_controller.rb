@@ -1,11 +1,32 @@
 class LinksController < ApplicationController
-	def new
+	def submit
+		@link = Link.new
 	end
 
 	def show
+		@link = Link.find(params[:id])
 	end
 
-	def create
-		render text: params[:links].inspect
+	def index
+		@links = Link.all
 	end
+
+	# def create
+	# 	@links = Link.new(params[:post])
+	#   @link.save
+	#   redirect_to @link
+	# end
+
+	def create
+	  @link = Link.new(link_params)
+	  @link.save
+	  redirect_to '/links'
+	end
+ 
+	private
+	  def link_params
+	    params.require(:link).permit(:title, :text, :url)
+	  end
+
 end
+
