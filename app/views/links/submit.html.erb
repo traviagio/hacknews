@@ -1,4 +1,4 @@
-<h1>Submit your links here:</h1>
+<h3>Submit:</h3>
 
 
 <%= form_for :links, url: links_path do |f| %>
@@ -6,7 +6,12 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </p>
- 
+
+    <p>
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </p>
+ <p>or</p>
   <p>
     <%= f.label :text %><br>
     <%= f.text_area :text %>
@@ -15,4 +20,8 @@
   <p>
     <%= f.submit %>
   </p>
+
+
 <% end %>
+
+  	<h5>Leave url blank to submit a question for discussion. If there is no url, the text (if any) will appear at the top of the comments page. If there is a url, the text will be ignored.</h5>

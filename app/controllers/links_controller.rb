@@ -4,4 +4,8 @@ class LinksController < ApplicationController
 
 	def show
 	end
+
+	def create
+		render text: params[:links].inspect
+	end
 end
