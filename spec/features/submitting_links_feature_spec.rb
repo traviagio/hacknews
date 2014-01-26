@@ -13,7 +13,7 @@ describe 'creating a new post' do
     fill_in 'Url', with: 'http://makeracademy.com'
     fill_in 'Text', with: 'Links description'
     # fill_in 'Tags', with: 'yolo, swag'
-    click_button 'Save Links'
+    click_button 'Create Link'
 
     expect(page).to have_content 'Hacker News'
     expect(page).to have_content 'http://makeracademy.com'
